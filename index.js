@@ -204,14 +204,15 @@ document.getElementById("reset").onclick = function(){
     render.canvas.remove();
 
     render = Render.create({
-        element: document.body,
+        element: document.getElementById("canvas"),
         engine: engine,
         options: {
             wireframes:false,
             width: 800,
             height: 480,
             showAngleIndicator: false,
-        }
+            background: "black"
+            }
     });
     Render.run(render)
     Runner.run(runner, engine);
