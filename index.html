@@ -6,14 +6,47 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-	<div id="title"><h1>HIGH SOCIETY</h1></div>
-	<br>
-	<div id="canvas"></div>
-	<div id="controls">
-		<button id="spawn">Spawn Block</button><br>
-		<button id="reset">Reset</button>
+	<div id="wrapper">
+		<div id="title"><h1>HIGH SOCIETY</h1></div>
+		<br>
+		<div id="canvas"></div>
+		<div id="controls">
+			<button id="spawn">Spawn Block</button>
+			<button id="reset">Reset</button>
+		</div>
+		<div id="chat">
+			<ul id="messages">
+			</ul>
+		</div>
 	</div>
 	<script src="./matter.js"></script>
 	<script src="index.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#chat").scrollTop($("#chat").height());
+        });
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+	<script>
+	  var socket = io();
+
+	  var messages = document.getElementById('messages');
+
+	  socket.on('connection', function(msg){
+		  var item = document.createElement('li');
+	      item.textContent = "A user connected.";
+	      messages.appendChild(item);
+	      window.scrollTo(0, document.body.scrollHeight);
+	  });
+
+	  socket.on('disconnection', function(msg){
+	  	var item = document.createElement('li');
+	  	item.textContent = "A user disconnected.";
+	  	messages.appendChild(item);
+	  	window.scrollTo(0, document.body.scrollHeight);
+	  });
+	</script>
 </body>
 </html>

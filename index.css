@@ -7,19 +7,55 @@
 	src: url("./albas.TTF");
 }
 
-
-#canvas, #controls{
-	border: 10px double white;
-	margin: 5px 5px 5px 5px;
-	float: left;
+#wrapper{
+	margin-left: 2%;
+	margin-right: 2%;
+	width: auto;
 }
 
-button {
+#canvas, #controls, #chat{
+	margin: 5px 5px 5px 5px;
+	float: left;
+	display: inline-block;
+}
+
+
+#canvas, #chat {
+	touch-action: none;
+	border: 10px double white;
+	border-radius: 10px;
+}
+
+#controls, #chat{
+	width: 30%;
+}
+
+#chat{
+	height: 395px;
+	position: relative;
+	overflow-y: auto;
+}
+      
+#messages { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+}
+
+#messages > li { padding: 0.5rem 1rem; font-family: "Segoe UI", sans-serif;}
+#messages > li:nth-child(odd) { background: darkslategray; }
+
+#controls button {
 	background-color: black;
 	color: white;
-	border: 0;
-	margin: 5px 5px 5px 5px;
-	font-family: Segoe UI;
+	height: 75px;
+	width: 150px;
+	border: 10px double white;
+	border-radius: 10px;
+	font-size: 20px;
+}
+#reset{
+	margin-left: 5px;
 }
 
 body {
@@ -28,7 +64,7 @@ body {
 }
 
 #title {
-	font-family: Alba Super;
+	font-family: Alba Super, sans-serif;
 	position: absolute;
 	top: 0;
 	left: 205px;
