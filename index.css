@@ -1,0 +1,36 @@
+* {
+	margin: auto;
+}
+
+@font-face {
+	font-family: "Alba Super";
+	src: url("albas.ttf");
+}
+
+
+#canvas, #controls{
+	border: 10px double white;
+	margin: 5px 5px 5px 5px;
+	float: left;
+}
+
+button {
+	background-color: black;
+	color: white;
+	border: 0;
+	margin: 5px 5px 5px 5px;
+	font-family: Segoe UI;
+}
+
+body {
+	color: white;
+	background-color: black;
+}
+
+#title {
+	font-family: Alba Super;
+	position: absolute;
+	top: 0;
+	left: 205px;
+	background-color: black;
+}
